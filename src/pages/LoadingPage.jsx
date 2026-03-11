@@ -1,0 +1,96 @@
+import { useEffect, useState } from "react";
+
+const LoadingPage = (props) => {
+
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    {
+      if(isLoading) {
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1500);
+      }
+    }
+  }, []);
+
+  return (
+    <>
+      <style>
+        {`.overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: rgba(255, 255, 255, 0.9);
+          z-index: 9999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .full_page{
+          height: 100vh;
+          width: 100vw;
+          background: white;
+        }
+        .dots-container{
+          padding: 0;
+          position: absolute;
+          text-align: center;
+          top: 50%;
+          width: 100%;
+        }
+        .dots{
+          animation: bounce 1.5s infinite linear;
+          background: linear-gradient(97deg, rgb(250, 82, 82) 0%, rgb(221, 36, 118) 100%);
+          border-radius: 50%;
+          display: inline-block;
+          height: 20px;
+          text-align: center;
+          width: 20px;
+          margin-right: 10px;
+        }
+        
+        .dots:nth-child(1){
+          animation-delay: .2s;
+        }
+        .dots:nth-child(2){
+          animation-delay: .4s;
+        }
+        .dots:nth-child(3){
+          animation-delay: .6s;
+        }
+        .dots:nth-child(4){
+          animation-delay: .8s;
+        }
+        .dots:nth-child(5){
+          animation-delay: 1s;
+        }
+        @keyframes bounce {
+            0% {
+              transform: translateY(0);
+            }
+            15% {
+                transform: translateY(-15px);
+            }
+            30% {
+                transform: translateY(0);
+            }
+        }
+        `}
+      </style>
+      <div className={`overlay ${isLoading ? "d-block" : "d-none"}`}>
+        <div className="full_page">
+          <div className="dots-container">
+            <div className="dots"></div>
+            <div className="dots"></div>
+            <div className="dots"></div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default LoadingPage;
