@@ -1,9 +1,9 @@
-
 const baeloo = {
   nom: "Baeloo",
-  description: "Il s'agit d'un site de référencement de plusieurs services (Hébergements, Restaurations, etc...). Les utilisateurs (client) pourront demander un devis pour mettre en avant leurs services et prestations. Ils doivent alors fournir à l'administrateur les informations et les images nécéssaires. Ils peuvent également demander un devis pour favoriser leurs services et prestations sur la page d'acceuil.",
+  description:
+    "Il s'agit d'un site de référencement de plusieurs services (Hébergements, Restaurations, etc...). Les utilisateurs (client) pourront demander un devis pour mettre en avant leurs services et prestations. Ils doivent alors fournir à l'administrateur les informations et les images nécéssaires. Ils peuvent également demander un devis pour favoriser leurs services et prestations sur la page d'acceuil.",
   image: "/assets/img/baeloo/image.webp",
-  galerie:[
+  galerie: [
     "/assets/img/baeloo/baeloo1.webp",
     "/assets/img/baeloo/baeloo2.webp",
     "/assets/img/baeloo/baeloo3.webp",
@@ -24,39 +24,37 @@ const baeloo = {
   technologies: [
     {
       nom: "HTML",
-      image: "/assets/img/icon/html.png",
+      image: "/assets/img/icon/stack/html.png",
     },
     {
       nom: "CSS",
-      image: "/assets/img/icon/css.png",
+      image: "/assets/img/icon/stack/css.png",
     },
     {
       nom: "Javascript",
-      image: "/assets/img/icon/JavaScript-logo.png",
+      image: "/assets/img/icon/stack/JavaScript-logo.png",
     },
     {
       nom: "Bootstrap",
-      image: "/assets/img/icon/bootstrap.webp",
+      image: "/assets/img/icon/stack/bootstrap.webp",
     },
     {
       nom: "MongoDB",
-      image: "/assets/img/icon/mongo.png",
+      image: "/assets/img/icon/stack/mongo.png",
     },
     {
       nom: "ExpressJS",
-      image: "/assets/img/icon/Expressjs.png",
+      image: "/assets/img/icon/stack/Expressjs.png",
     },
     {
       nom: "React",
-      image: "/assets/img/icon/react.png",
+      image: "/assets/img/icon/stack/react.png",
     },
     {
       nom: "NodeJS",
-      image: "/assets/img/icon/node.png",
-    }
-  ]
+      image: "/assets/img/icon/stack/node.png",
+    },
+  ],
 };
 
-export const PORTFOLIO = [
-  baeloo
-];
+export const PORTFOLIO = [baeloo];

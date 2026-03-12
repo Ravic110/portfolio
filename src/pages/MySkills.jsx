@@ -3,7 +3,39 @@ import { BACK_END_SKILLS } from "@utils/backendskills.utils";
 import { BDD_SKILLS } from "@utils/baseskills.utils";
 import { FRAMEWORK } from "@utils/framework.utils";
 import { FRONT_END_SKILLS } from "@utils/frontendskills.utils";
-import { v4 as uuidv4 } from "uuid";
+
+const SKILL_SECTIONS = [
+  {
+    title: "Frontend",
+    icon: "fa-light fa-swatchbook",
+    bgClass: "bg-prink",
+    items: FRONT_END_SKILLS,
+  },
+  {
+    title: "Backend",
+    icon: "fa-regular fa-grid-2",
+    bgClass: "bg-catkrill",
+    items: BACK_END_SKILLS,
+  },
+  {
+    title: "Framework",
+    icon: "fa-regular fa-grid-2",
+    bgClass: "bg-prink bg-blue",
+    items: FRAMEWORK,
+  },
+  {
+    title: "Base de données",
+    icon: "fa-regular fa-code",
+    bgClass: "bg-catkrill",
+    items: BDD_SKILLS,
+  },
+  {
+    title: "Autres",
+    icon: "fa-regular fa-code",
+    bgClass: "bg-prink bg-blue",
+    items: AUTRES_SKILLS,
+  },
+];
 
 const MySkills = (props) => {
   const { noPadding } = props;
@@ -17,143 +49,37 @@ const MySkills = (props) => {
         </div>
         <div className="bostami-what-do-wrap mb-30">
           <div className="row">
-            {/* single item */}
-            <div className="col-xxl-12 col-xl-12 col-lg-12">
-              <div className="bostami-what-do-item bg-prink">
-                <div className="icon">
-                  <i className="fa-light fa-swatchbook" />
-                </div>
-                <div className="text">
-                  <h4 className="title">Frontend</h4>
+            {SKILL_SECTIONS.map((section) => (
+              <div className="col-xxl-12 col-xl-12 col-lg-12" key={section.title}>
+                <div className={`bostami-what-do-item ${section.bgClass}`}>
+                  <div className="icon">
+                    <i className={section.icon} />
+                  </div>
+                  <div className="text">
+                    <h4 className="title">{section.title}</h4>
 
-                  <div className="d-flex flex-wrap gap-4">
-                    {FRONT_END_SKILLS.map((element) => {
-                      return (
+                    <div className="d-flex flex-wrap gap-4">
+                      {section.items.map((element) => (
                         <div
                           className="d-flex flex-column justify-content-center align-items-center"
-                          key={uuidv4()}
+                          key={element.nom}
                         >
-                          <img src={element.image} alt="" height={"50px"} width={"auto"} />
+                          <img
+                            src={element.image}
+                            alt={element.nom}
+                            height={"50px"}
+                            width={"auto"}
+                          />
                           <span className="fw-bold" style={{ fontSize: "1em" }}>
                             {element.nom}
                           </span>
                         </div>
-                      );
-                    })}
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            {/* single item */}
-            <div className="col-xxl-12 col-xl-12 col-lg-12">
-              <div className="bostami-what-do-item bg-catkrill">
-                <div className="icon">
-                  <i className="fa-regular fa-grid-2" />
-                </div>
-                <div className="text">
-                  <h4 className="title">Backend</h4>
-
-                  <div className="d-flex flex-wrap gap-4">
-                    {BACK_END_SKILLS.map((element) => {
-                      return (
-                        <div
-                          className="d-flex flex-column justify-content-center align-items-center"
-                          key={uuidv4()}
-                        >
-                          <img src={element.image} alt="" height={"50px"} width={"auto"} />
-                          <span className="fw-bold" style={{ fontSize: "1em" }}>
-                            {element.nom}
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* single item */}
-            <div className="col-xxl-12 col-xl-12 col-lg-12">
-              <div className="bostami-what-do-item bg-prink bg-blue">
-                <div className="icon">
-                  <i className="fa-regular fa-grid-2" />
-                </div>
-                <div className="text">
-                  <h4 className="title">Framework</h4>
-
-                  <div className="d-flex flex-wrap gap-4">
-                    {FRAMEWORK.map((element) => {
-                      return (
-                        <div
-                          className="d-flex flex-column justify-content-center align-items-center"
-                          key={uuidv4()}
-                        >
-                          <img src={element.image} alt="" height={"50px"} width={"auto"} />
-                          <span className="fw-bold" style={{ fontSize: "1em" }}>
-                            {element.nom}
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* single item */}
-            <div className="col-xxl-12 col-xl-12 col-lg-12">
-              <div className="bostami-what-do-item bg-catkrill">
-                <div className="icon">
-                  <i className="fa-regular fa-code" />
-                </div>
-                <div className="text">
-                  <h4 className="title">Base de données</h4>
-
-                  <div className="d-flex flex-wrap gap-4">
-                    {BDD_SKILLS.map((element) => {
-                      return (
-                        <div
-                          className="d-flex flex-column justify-content-center align-items-center"
-                          key={uuidv4()}
-                        >
-                          <img src={element.image} alt="" height={"50px"} width={"auto"} />
-                          <span className="fw-bold" style={{ fontSize: "1em" }}>
-                            {element.nom}
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* single item */}
-            <div className="col-xxl-12 col-xl-12 col-lg-12">
-              <div className="bostami-what-do-item bg-prink bg-blue">
-                <div className="icon">
-                  <i className="fa-regular fa-code" />
-                </div>
-                <div className="text">
-                  <h4 className="title">Autres</h4>
-
-                  <div className="d-flex flex-wrap gap-4">
-                    {AUTRES_SKILLS.map((element) => {
-                      return (
-                        <div
-                          className="d-flex flex-column justify-content-center align-items-center"
-                          key={uuidv4()}
-                        >
-                          <img src={element.image} alt="" height={"50px"} width={"auto"} />
-                          <span className="fw-bold" style={{ fontSize: "1em" }}>
-                            {element.nom}
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

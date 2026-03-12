@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
 import { EDUCATION } from "../../utils/education.utils";
 
 const Education = () => {
@@ -15,7 +14,10 @@ const Education = () => {
         <div className="bostami-card-wrap">
           {EDUCATION.map((element) => {
             return (
-              <div className="bostami-card-item bg-prink mb-20" key={uuidv4()}>
+              <div
+                className="bostami-card-item bg-prink mb-20"
+                key={`${element.parcours}-${element.anneeDebut}-${element.anneeFin}`}
+              >
                 <span className="card-subtitle">
                   {element.anneeDebut}-{element.anneeFin}
                 </span>

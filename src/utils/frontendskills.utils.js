@@ -1,22 +1,22 @@
 export const FRONT_END_SKILLS = [
   {
     nom: "HTML",
-    image: "/assets/img/icon/html.png",
+    image: "/assets/img/icon/stack/html.png",
   },
   {
     nom: "CSS",
-    image: "/assets/img/icon/css.png",
+    image: "/assets/img/icon/stack/css.png",
   },
   {
     nom: "Javascript",
-    image: "/assets/img/icon/JavaScript-logo.png",
+    image: "/assets/img/icon/stack/JavaScript-logo.png",
   },
   {
     nom: "Bootstrap",
-    image: "/assets/img/icon/bootstrap.webp",
+    image: "/assets/img/icon/stack/bootstrap.webp",
   },
   {
     nom: "React",
-    image: "/assets/img/icon/react.png",
+    image: "/assets/img/icon/stack/react.png",
   },
-]
+];

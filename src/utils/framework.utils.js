@@ -1,14 +1,18 @@
 export const FRAMEWORK = [
   {
-    nom: "Angular",
-    image: "/assets/img/icon/angular.png",
+    nom: "Django",
+    image: "/assets/img/icon/stack/django.png",
   },
-  // {
-  //   nom: "NextJS",
-  //   image: "/assets/img/icon/next.png",
-  // },
   {
-    nom: "CodeIgniter",
-    image: "/assets/img/icon/codigniter.png",
+    nom: "Odoo",
+    image: "/assets/img/icon/stack/odoo.svg",
   },
-]
+  {
+    nom: "Kivy",
+    image: "/assets/img/icon/stack/kivy.png",
+  },
+  {
+    nom: "Symfony",
+    image: "/assets/img/icon/stack/symfony.png",
+  },
+];

@@ -2,6 +2,7 @@ import MySkills from "@pages/MySkills";
 import Certificat from "../Certificat/Certificat";
 import Education from "./Education";
 import Experience from "./Experience";
+import Leadership from "./Leadership";
 
 
 const CV = () => {
@@ -22,6 +23,8 @@ const CV = () => {
             <Experience/>
 
             <Certificat/>
+
+            <Leadership/>
 
             <MySkills noPadding={true}/>
 

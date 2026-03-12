@@ -1,5 +1,4 @@
 import MyGallery from "@components/ReactImageGallery/MyGallery";
-import { v4 as uuidv4 } from "uuid";
 import { PORTFOLIO } from "../../utils/portfolio.utils";
 
 const Portfolio = () => {
@@ -17,23 +16,27 @@ const Portfolio = () => {
             <div className="col-12">
               <div className="row d-flex">
                 {PORTFOLIO.map((element, index) => {
+                  const modalId = `portfolio-${index}`;
                   return (
-                    <div className="col-md-6" key={uuidv4()}>
+                    <div
+                      className="col-md-6"
+                      key={`${element.nom}-${index}`}
+                    >
                       <div className=" isotop-item mockup logo w-100">
                         <div className="fillter-item bg-prink">
                           <a
                             className="img"
                             href="#"
                             data-bs-toggle="modal"
-                            data-bs-target={`#portfolio-${index}`}
+                            data-bs-target={`#${modalId}`}
                           >
-                            <img src={element.image} alt="" />
+                            <img src={element.image} alt={element.nom} />
                           </a>
                           <h6 className="item-title">
                             <a
                               href="#"
                               data-bs-toggle="modal"
-                              data-bs-target={`#portfolio-${index}`}
+                              data-bs-target={`#${modalId}`}
                             >
                               {element.nom}
                             </a>
@@ -50,13 +53,14 @@ const Portfolio = () => {
       </div>
 
       {PORTFOLIO.map((element, index) => {
+        const modalId = `portfolio-${index}`;
         return (
           <div
             className="modal portfolio-modal-box fade"
-            id={`portfolio-${index}`}
+            id={modalId}
             tabIndex={-1}
             role="dialog"
-            key={uuidv4()}
+            key={`${element.nom}-${index}-modal`}
           >
             <div className="modal-dialog modal-dialog-centered" role="document">
               <div className="modal-content">
@@ -79,17 +83,15 @@ const Portfolio = () => {
                           <i className="fa-solid fa-code" />
                           Technologies :{" "}
                           <div className="d-flex flex-wrap gap-2 pt-3">
-                            {element.technologies.map((tech, index) => {
-                              return (
-                                <div
-                                  key={uuidv4()}
-                                  className="d-flex flex-column gap-2 align-items-center"
-                                >
-                                  <img src={tech.image} alt="" height={"50px"} width={"auto"}/>
-                                  <span style={{ fontSize: "0.7em" }}>{tech.nom}</span>
-                                </div>
-                              );
-                            })}
+                            {element.technologies.map((tech) => (
+                              <div
+                                key={`${element.nom}-${tech.nom}`}
+                                className="d-flex flex-column gap-2 align-items-center"
+                              >
+                                <img src={tech.image} alt={tech.nom} height={"50px"} width={"auto"}/>
+                                <span style={{ fontSize: "0.7em" }}>{tech.nom}</span>
+                              </div>
+                            ))}
                           </div>
                         </h3>
                       </div>
@@ -106,12 +108,12 @@ const Portfolio = () => {
 
                   <div className="h1-modal-img">
                   <MyGallery
-                    images={element.galerie.map((img) => {
-                      return {
-                        original: img,
-                        thumbnail: img,
-                      };
-                    })}
+                    images={element.galerie.map((img) => ({
+                      original: img,
+                      thumbnail: img,
+                      originalAlt: element.nom,
+                      thumbnailAlt: element.nom,
+                    }))}
                     thumbnailPosition={"bottom"}
                     autoPlay={true}
                     lazyLoad={true}

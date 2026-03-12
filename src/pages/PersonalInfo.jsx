@@ -9,40 +9,21 @@ const PersonalInfo = () => {
             {/* img */}
             <div className="bostami-parsonal-info-img">
               <img
-                src="/assets/img/parsonal-info/profil.webp"
+                src="/assets/img/parsonal-info/profile-new.jpg"
                 alt="avatar"
-                style={{width:"250px", height:"250px"}}
+                style={{ width: "250px", height: "250px" }}
               />
             </div>
             {/* name */}
             <h4 className="bostami-parsonal-info-name">
-              <a href="home-3.html#">Faliana RANAIVOSEHENO</a>
+              <a href="home-3.html#">Victorien ANDRIANASOAVINA</a>
             </h4>
             <span className="bostami-parsonal-info-bio mb-15">
-              Développeur Web Fullstack
+              Ingénieur Informatique & Data
             </span>
             {/* socail link */}
             <ul className="bostami-parsonal-info-social-link mb-30">
-              {/* <li>
-                <a href="home-3.html#" className="facebook">
-                  <i className="fa-brands fa-facebook-f" />
-                </a>
-              </li>
-              <li>
-                <a href="home-3.html#" className="twitter">
-                  <i className="fa-brands fa-twitter" />
-                </a>
-              </li> */}
-              {/* <li>
-                <a href="home-3.html#" className="instagram">
-                  <i className="fa-brands fa-instagram" />
-                </a>
-              </li> */}
-              <li>
-                <a href="https://www.linkedin.com/in/faliana-ranaivoseheno-45488425b/" className="linkedin" target="_blank" rel="noreferrer">
-                  <i className="fa-brands fa-linkedin-in" />
-                </a>
-              </li>
+              
             </ul>
             {/* contact */}
             <div className="bostami-parsonal-info-contact mb-30">
@@ -52,7 +33,7 @@ const PersonalInfo = () => {
                 </div>
                 <div className="text">
                   <span>Téléphone</span>
-                  <p>+261 34 60 264 95</p>
+                  <p>+261 34 36 772 34</p>
                 </div>
               </div>
               <div className="bostami-parsonal-info-contact-item email">
@@ -61,7 +42,7 @@ const PersonalInfo = () => {
                 </div>
                 <div className="text">
                   <span>Email</span>
-                  <p className="text-lowercase">faliana23@gmail.com</p>
+                  <p className="text-lowercase">andriavict@gmail.com</p>
                 </div>
               </div>
               <div className="bostami-parsonal-info-contact-item location">
@@ -70,22 +51,13 @@ const PersonalInfo = () => {
                 </div>
                 <div className="text">
                   <span>Adresse</span>
-                  <p>Alasora, Antananarivo, Madagascar</p>
-                </div>
-              </div>
-              <div className="bostami-parsonal-info-contact-item calendar">
-                <div className="icon">
-                  <i className="fa-light fa-calendar-days" />
-                </div>
-                <div className="text">
-                  <span>Date de naissance</span>
-                  <p>03 Juin 2001</p>
+                  <p>IVF 167 ter Anosisoa, Ambohimanarina, Antananarivo</p>
                 </div>
               </div>
             </div>
             {/* cv button */}
             <div className="bostami-parsonal-info-btn">
-              <a className="btn-2 circle" href="/CV RANAIVOSEHENO Faliana Nirindra v5.pdf">
+              <a className="btn-2 circle" href="/certificates/CV_victorien_ANDRIANASOAVINA.pdf">
                 <span className="icon">
                   <i className="fa-regular fa-download" />
                 </span>

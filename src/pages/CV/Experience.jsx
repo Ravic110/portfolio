@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
 import { EXPERIENCE } from "../../utils/experience.utils";
 
 const Experience = () => {
@@ -16,7 +15,7 @@ const Experience = () => {
           return (
             <div
               className="bostami-card-item bg-catkrill  mb-20"
-              key={uuidv4()}
+              key={`${element.poste}-${element.debut}-${element.fin}`}
             >
               <span className="card-subtitle">
                 {element.debut} - {element.fin}

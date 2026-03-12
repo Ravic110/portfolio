@@ -1,16 +1,11 @@
 import { useEffect, useState } from "react";
 
-const LoadingPage = (props) => {
-
+const LoadingPage = () => {
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    {
-      if(isLoading) {
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 1500);
-      }
-    }
+    const timer = setTimeout(() => setIsLoading(false), 800);
+    return () => clearTimeout(timer);
   }, []);
 
   return (

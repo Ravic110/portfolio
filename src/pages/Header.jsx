@@ -1,4 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
+import { NAV_LINKS } from "@routes/navLinks";
 
 const Header = () => {
   const activeClass = (e) => {
@@ -33,14 +34,17 @@ const Header = () => {
                     <i className="fa-light fa-moon" />
                     <i className="fa-light fa-sun" />
                   </div> */}
-                  <div
+                  <button
                     className="menu-btn toggle_menu d-lg-none"
+                    aria-label="Ouvrir le menu"
+                    aria-controls="mobile-menu"
+                    aria-expanded="false"
                     onClick={(e) => activeClass(e)}
                   >
                     <span />
                     <span />
                     <span />
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -48,7 +52,10 @@ const Header = () => {
 
           {/* mobile menu */}
           <div className="mobile-menu-wrap">
-            <div className="mobile-menu mobile_menu_3 mean-container">
+            <div
+              id="mobile-menu"
+              className="mobile-menu mobile_menu_3 mean-container"
+            >
               <div className="mean-bar">
                 <a
                   href="#nav"
@@ -63,36 +70,29 @@ const Header = () => {
                 </a>
                 <nav className="mean-nav">
                   <ul style={{ display: "none" }}>
-                    <li className={`${location.pathname.toLowerCase() === "/" || location.pathname.toLowerCase() === "/about" ? "active" : ""}`}>
-                      <NavLink to="/about">
-                        <div className="d-flex gap-2">
-                          <span>
-                            <i className="fa-light fa-address-card" />
-                          </span>
-                          à propos
-                        </div>
-                      </NavLink>
-                    </li>
-                    <li className={`${location.pathname.toLowerCase() === "/resume" ? "active" : ""}`}>
-                      <NavLink to="/resume">
-                        <div className="d-flex gap-2">
-                          <span>
-                            <i className="fa-light fa-file-user" />
-                          </span>
-                          Mon CV
-                        </div>
-                      </NavLink>
-                    </li>
-                    <li className={`${location.pathname.toLowerCase() === "/portfolio" ? "active" : ""}`}>
-                      <NavLink to="/portfolio">
-                        <div className="d-flex gap-2">
-                          <span>
-                            <i className="fa-light fa-briefcase" />
-                          </span>
-                          Mon portfolio
-                        </div>
-                      </NavLink>
-                    </li>
+                    {NAV_LINKS.map((link) => {
+                      const pathname = location.pathname.toLowerCase();
+                      const isRootAbout =
+                        link.path === "/about" && pathname === "/";
+                      const isActive =
+                        link.path.toLowerCase() === pathname || isRootAbout;
+
+                      return (
+                        <li
+                          key={link.path}
+                          className={isActive ? "active" : ""}
+                        >
+                          <NavLink to={link.path}>
+                            <div className="d-flex gap-2">
+                              <span>
+                                <i className={link.icon} />
+                              </span>
+                              {link.label}
+                            </div>
+                          </NavLink>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </nav>
               </div>

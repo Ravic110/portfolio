@@ -1,7 +1,7 @@
 import About from "@pages/About/About";
 import Layout from "@pages/Layout";
-import CV from "../pages/CV/CV";
-import Portfolio from "../pages/Portfolio/Portfolio";
+import CV from "@pages/CV/CV";
+import Portfolio from "@pages/Portfolio/Portfolio";
 
 export const MAIN_ROUTES = {
   path: "/",
@@ -9,7 +9,7 @@ export const MAIN_ROUTES = {
   errorElement: <></>,
   children: [
     {
-      path: "",
+      index: true,
       element: <About/>,
       errorElement: <></>
     },

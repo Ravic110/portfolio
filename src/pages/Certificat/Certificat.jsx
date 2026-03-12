@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
 import { CERTIFICAT } from "../../utils/certificat.utils";
 
 const Certificat = () => {
@@ -14,7 +13,10 @@ const Certificat = () => {
           <div className="row d-flex">
             {CERTIFICAT.map((element, index) => {
               return (
-                <div className="col-md-6" key={uuidv4()}>
+                <div
+                  className="col-md-6"
+                  key={`${element.nom}-${element.dateObtention}`}
+                >
                   <div
                     className={`bostami-card-item mb-20 ${
                       index % 2 === 0 ? "bg-prink " : "bg-catkrill"

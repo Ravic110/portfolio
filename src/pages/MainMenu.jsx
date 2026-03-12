@@ -1,4 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
+import { NAV_LINKS } from "@routes/navLinks";
 
 const MainMenu = () => {
   const location = useLocation();
@@ -10,46 +11,23 @@ const MainMenu = () => {
         <div className="bostami-main-menu-wrap">
           <nav className="bastami-main-menu main_menu_3">
             <ul>
-              <li
-                className={`${
-                  location.pathname.toLowerCase() === "/" ||
-                  location.pathname.toLowerCase() === "/about"
-                    ? "active"
-                    : ""
-                }`}
-              >
-                <NavLink to="/about">
-                  <span>
-                    <i className="fa-light fa-address-card" />
-                  </span>
-                  à propos
-                </NavLink>
-              </li>
-              <li
-                className={`${
-                  location.pathname.toLowerCase() === "/resume" ? "active" : ""
-                }`}
-              >
-                <NavLink to="/resume">
-                  <span>
-                    <i className="fa-light fa-file-user" />
-                  </span>
-                  Mon CV
-                </NavLink>
-              </li>
-              <li className={`${
-                  location.pathname.toLowerCase() === "/portfolio" ? "active" : ""
-                }`}>
-                <NavLink to="/portfolio">
-                  <span>
-                    <i className="fa-light fa-briefcase" />
-                  </span>
-                  Mon Portfolio
-                </NavLink>
-              </li>
-              
+              {NAV_LINKS.map((link) => {
+                const pathname = location.pathname.toLowerCase();
+                const isRootAbout = link.path === "/about" && pathname === "/";
+                const isActive =
+                  link.path.toLowerCase() === pathname || isRootAbout;
 
-
+                return (
+                  <li key={link.path} className={isActive ? "active" : ""}>
+                    <NavLink to={link.path}>
+                      <span>
+                        <i className={link.icon} />
+                      </span>
+                      {link.label}
+                    </NavLink>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         </div>
