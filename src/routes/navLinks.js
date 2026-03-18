@@ -1,17 +1,17 @@
 export const NAV_LINKS = [
   {
     path: "/about",
-    label: "à propos",
+    labelKey: "about",
     icon: "fa-light fa-address-card",
   },
   {
     path: "/resume",
-    label: "Mon CV",
+    labelKey: "resume",
     icon: "fa-light fa-file-user",
   },
   {
     path: "/portfolio",
-    label: "Mon Portfolio",
+    labelKey: "portfolio",
     icon: "fa-light fa-briefcase",
   },
 ];

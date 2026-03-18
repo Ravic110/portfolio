@@ -10,6 +10,7 @@ module.exports = function override(config) {
     config.resolve.alias['@public'] = path.resolve(__dirname, 'public');
     config.resolve.alias['@assets'] = path.resolve(__dirname, 'public/assets');
     config.resolve.alias['@utils'] = path.resolve(__dirname, 'src/utils');
+    config.resolve.alias['@data'] = path.resolve(__dirname, 'src/data');
     config.resolve.alias['@api'] = path.resolve(__dirname, 'src/services/api');
     config.resolve.alias['@reducers'] = path.resolve(__dirname, 'src/services/reducer');
     config.resolve.alias['@routes'] = path.resolve(__dirname, 'src/routes');

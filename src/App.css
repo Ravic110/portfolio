@@ -2,6 +2,26 @@
   text-align: center;
 }
 
+/* Language toggle button */
+.lang-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1.5px solid currentColor;
+  border-radius: 20px;
+  background: transparent;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.lang-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

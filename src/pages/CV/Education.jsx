@@ -1,6 +1,11 @@
-import { EDUCATION } from "../../utils/education.utils";
+import { EDUCATION } from "@data/education";
+import useTranslations from "@hooks/useTranslations";
+import { useLanguage } from "@contexts/LanguageContext";
 
 const Education = () => {
+  const t = useTranslations();
+  const { lang } = useLanguage();
+
   return (
     <>
       {/* education */}
@@ -8,11 +13,14 @@ const Education = () => {
         <div className="bostami-section-title-wrap mb-20">
           <h4 className="section-title">
             <i className="fa-light fa-school" />
-            Parcours académique
+            {t.cv.education}
           </h4>
         </div>
         <div className="bostami-card-wrap">
           {EDUCATION.map((element) => {
+            const parcours = lang === "en" && element.parcours_en
+              ? element.parcours_en
+              : element.parcours;
             return (
               <div
                 className="bostami-card-item bg-prink mb-20"
@@ -22,7 +30,7 @@ const Education = () => {
                   {element.anneeDebut}-{element.anneeFin}
                 </span>
                 <h6 className="card-title">
-                  {element.parcours} <span>- {element.etablissement},</span>
+                  {parcours} <span>- {element.etablissement},</span>
                 </h6>
                 <p className="card-text">{element.lieu}</p>
               </div>

@@ -1,32 +1,34 @@
+import PropTypes from "prop-types";
 import ImageGallery from "react-image-gallery";
-// import stylesheet if you're not already using CSS @import
 import "react-image-gallery/styles/css/image-gallery.css";
 
-// const images = [
-//   {
-//     original: "https://picsum.photos/id/1018/1000/600/",
-//     thumbnail: "https://picsum.photos/id/1018/250/150/",
-//   },
-//   {
-//     original: "https://picsum.photos/id/1015/1000/600/",
-//     thumbnail: "https://picsum.photos/id/1015/250/150/",
-//   },
-//   {
-//     original: "https://picsum.photos/id/1019/1000/600/",
-//     thumbnail: "https://picsum.photos/id/1019/250/150/",
-//   },
-// ];
+const MyGallery = ({ images, thumbnailPosition, autoPlay, lazyLoad }) => (
+  <ImageGallery
+    items={images}
+    thumbnailPosition={thumbnailPosition}
+    autoPlay={autoPlay}
+    lazyLoad={lazyLoad}
+  />
+);
 
-const MyGallery = (props) => {
-  const { images, thumbnailPosition, autoPlay, lazyLoad } = props;
-  return (
-    <ImageGallery
-      items={images}
-      thumbnailPosition={thumbnailPosition}
-      autoPlay={autoPlay}
-      lazyLoad={lazyLoad}
-    />
-  );
+MyGallery.propTypes = {
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      original: PropTypes.string.isRequired,
+      thumbnail: PropTypes.string.isRequired,
+      originalAlt: PropTypes.string,
+      thumbnailAlt: PropTypes.string,
+    })
+  ).isRequired,
+  thumbnailPosition: PropTypes.oneOf(["top", "bottom", "left", "right"]),
+  autoPlay: PropTypes.bool,
+  lazyLoad: PropTypes.bool,
+};
+
+MyGallery.defaultProps = {
+  thumbnailPosition: "bottom",
+  autoPlay: false,
+  lazyLoad: false,
 };
 
 export default MyGallery;

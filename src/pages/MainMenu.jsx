@@ -1,8 +1,12 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { NAV_LINKS } from "@routes/navLinks";
+import { useLanguage } from "@contexts/LanguageContext";
+import { translations } from "@utils/translations";
 
 const MainMenu = () => {
   const location = useLocation();
+  const { lang } = useLanguage();
+  const t = translations[lang].nav;
 
   return (
     <>
@@ -23,7 +27,7 @@ const MainMenu = () => {
                       <span>
                         <i className={link.icon} />
                       </span>
-                      {link.label}
+                      {t[link.labelKey]}
                     </NavLink>
                   </li>
                 );

@@ -2,6 +2,8 @@ const baeloo = {
   nom: "Baeloo",
   description:
     "Il s'agit d'un site de référencement de plusieurs services (Hébergements, Restaurations, etc...). Les utilisateurs (client) pourront demander un devis pour mettre en avant leurs services et prestations. Ils doivent alors fournir à l'administrateur les informations et les images nécéssaires. Ils peuvent également demander un devis pour favoriser leurs services et prestations sur la page d'acceuil.",
+  description_en:
+    "A service listing platform for multiple categories (Accommodation, Restaurants, etc.). Users (clients) can request a quote to showcase their services and offerings. They must provide the administrator with the necessary information and images. They can also request a quote to feature their services on the homepage.",
   image: "/assets/img/baeloo/image.webp",
   galerie: [
     "/assets/img/baeloo/baeloo1.webp",
@@ -22,38 +24,14 @@ const baeloo = {
     "/assets/img/baeloo/baeloo16.webp",
   ],
   technologies: [
-    {
-      nom: "HTML",
-      image: "/assets/img/icon/stack/html.png",
-    },
-    {
-      nom: "CSS",
-      image: "/assets/img/icon/stack/css.png",
-    },
-    {
-      nom: "Javascript",
-      image: "/assets/img/icon/stack/JavaScript-logo.png",
-    },
-    {
-      nom: "Bootstrap",
-      image: "/assets/img/icon/stack/bootstrap.webp",
-    },
-    {
-      nom: "MongoDB",
-      image: "/assets/img/icon/stack/mongo.png",
-    },
-    {
-      nom: "ExpressJS",
-      image: "/assets/img/icon/stack/Expressjs.png",
-    },
-    {
-      nom: "React",
-      image: "/assets/img/icon/stack/react.png",
-    },
-    {
-      nom: "NodeJS",
-      image: "/assets/img/icon/stack/node.png",
-    },
+    { nom: "HTML",       image: "/assets/img/icon/stack/html.png" },
+    { nom: "CSS",        image: "/assets/img/icon/stack/css.png" },
+    { nom: "Javascript", image: "/assets/img/icon/stack/JavaScript-logo.png" },
+    { nom: "Bootstrap",  image: "/assets/img/icon/stack/bootstrap.webp" },
+    { nom: "MongoDB",    image: "/assets/img/icon/stack/mongo.png" },
+    { nom: "ExpressJS",  image: "/assets/img/icon/stack/Expressjs.png" },
+    { nom: "React",      image: "/assets/img/icon/stack/react.png" },
+    { nom: "NodeJS",     image: "/assets/img/icon/stack/node.png" },
   ],
 };
 

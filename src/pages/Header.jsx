@@ -1,8 +1,13 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { NAV_LINKS } from "@routes/navLinks";
+import { useLanguage } from "@contexts/LanguageContext";
+import { translations } from "@utils/translations";
 
 const Header = () => {
-  const activeClass = (e) => {
+  const { lang, toggleLanguage } = useLanguage();
+  const t = translations[lang].nav;
+
+  const activeClass = () => {
     let element = document.querySelector(".mobile-menu");
     if (element.classList.contains("active")) {
       element.classList.remove("active");
@@ -18,28 +23,29 @@ const Header = () => {
       <div className="bostami-header-area mb-30 z-index-5">
         <div className="container">
           <div className="bostami-header-wrap">
-            <div className="row">
+            <div className="row align-items-center">
               {/* logo */}
               <div className="col-6">
-                <div className="bostami-header-logo">
-                  {/* <a className="site-logo" href="../index.html">
-                    <img src="/assets/img/logo/logo-2.png" alt="" />
-                  </a> */}
-                </div>
+                <div className="bostami-header-logo" />
               </div>
               {/* menu btn */}
               <div className="col-6">
-                <div className="bostami-header-menu-btn text-right mb-0">
-                  {/* <div className="dark-btn dark-btn-stored dark-btn-icon">
-                    <i className="fa-light fa-moon" />
-                    <i className="fa-light fa-sun" />
-                  </div> */}
+                <div className="bostami-header-menu-btn text-right mb-0 d-flex justify-content-end align-items-center gap-2">
+                  <button
+                    className="lang-toggle-btn"
+                    onClick={toggleLanguage}
+                    aria-label="Changer la langue"
+                    title={lang === "fr" ? "Switch to English" : "Passer en Français"}
+                  >
+                    <i className="fa-light fa-globe" />
+                    <span>{lang === "fr" ? "EN" : "FR"}</span>
+                  </button>
                   <button
                     className="menu-btn toggle_menu d-lg-none"
                     aria-label="Ouvrir le menu"
                     aria-controls="mobile-menu"
                     aria-expanded="false"
-                    onClick={(e) => activeClass(e)}
+                    onClick={() => activeClass()}
                   >
                     <span />
                     <span />
@@ -87,7 +93,7 @@ const Header = () => {
                               <span>
                                 <i className={link.icon} />
                               </span>
-                              {link.label}
+                              {t[link.labelKey]}
                             </div>
                           </NavLink>
                         </li>
