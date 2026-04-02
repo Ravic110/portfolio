@@ -12,14 +12,13 @@ const PersonalInfo = () => {
               <img
                 src="/assets/img/parsonal-info/profile-new.jpg"
                 alt="avatar"
-                style={{ width: "250px", height: "250px" }}
               />
             </div>
             <h4 className="bostami-parsonal-info-name">
-              <a href="home-3.html#">Victorien ANDRIANASOAVINA</a>
+              Victorien ANDRIANASOAVINA
             </h4>
             <span className="bostami-parsonal-info-bio mb-15">
-              Ingénieur Informatique & Data
+              {t.personalInfo.bio}
             </span>
             <ul className="bostami-parsonal-info-social-link mb-30" />
             <div className="bostami-parsonal-info-contact mb-30">
@@ -37,7 +36,7 @@ const PersonalInfo = () => {
                   <i className="fa-regular fa-envelope-open-text" />
                 </div>
                 <div className="text">
-                  <span>Email</span>
+                  <span>{t.personalInfo.email}</span>
                   <p className="text-lowercase">andriavict@gmail.com</p>
                 </div>
               </div>

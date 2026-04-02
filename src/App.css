@@ -2,6 +2,30 @@
   text-align: center;
 }
 
+/* Layout background */
+.page-wrapper.home-3 {
+  background-image: url('./assets/img/bg/page-bg-1.webp');
+}
+
+/* Personal info profile image */
+.bostami-parsonal-info-img img {
+  width: 250px;
+  height: 250px;
+}
+
+/* Portfolio card buttons */
+.portfolio-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.portfolio-btn--block {
+  display: block;
+  width: 100%;
+}
+
 /* Language toggle button */
 .lang-toggle-btn {
   display: inline-flex;

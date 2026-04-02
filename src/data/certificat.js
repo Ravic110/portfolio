@@ -47,4 +47,22 @@ export const CERTIFICAT = [
     nom: "Data Visualization with Seaborn",
     etablissement: "CodeSignal",
   },
+  {
+    dateObtention: "Novembre 2024",
+    lien: "/certificates/emc-2024.pdf",
+    nom: "Emerging Malagasy Changemakers 2024",
+    etablissement: "Emerging Malagasy Changemakers",
+  },
+  {
+    dateObtention: "Juillet 2022",
+    lien: "/certificates/pole-stage.pdf",
+    nom: "Certificat de Formation pré-stage",
+    etablissement: "Pôle Stage Madagascar",
+  },
+  {
+    dateObtention: "Mai 2022",
+    lien: "/certificates/management-cohort1.pdf",
+    nom: "Formation Management – COHORT-1",
+    etablissement: "Formation Management Spécial Training",
+  },
 ];

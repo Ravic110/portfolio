@@ -20,8 +20,8 @@ const PortfolioModal = ({ element, modalId }) => {
       <div className="modal-dialog modal-dialog-centered" role="document">
         <div className="modal-content">
           <div className="modal-header">
-            <button type="button" className="close" data-bs-dismiss="modal">
-              <i className="far fa-times" />
+            <button type="button" className="close" data-bs-dismiss="modal" aria-label="Fermer la fenêtre">
+              <i className="far fa-times" aria-hidden="true" />
             </button>
           </div>
           <div className="modal-body">

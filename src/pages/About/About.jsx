@@ -15,12 +15,12 @@ const About = () => {
             <p>{t.about.bio2}</p>
             <div className="d-flex justify-content-end gap-3">
               <NavLink to="/resume">
-                <button type="submit" className="form-btn">
+                <button type="button" className="form-btn">
                   {t.about.cvBtn} <i className="fa-solid fa-chevron-right" />
                 </button>
               </NavLink>
               <NavLink to="/portfolio">
-                <button type="submit" className="form-btn">
+                <button type="button" className="form-btn">
                   {t.about.portfolioBtn} <i className="fa-solid fa-chevron-right" />
                 </button>
               </NavLink>

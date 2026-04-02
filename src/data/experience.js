@@ -1,6 +1,13 @@
 export const EXPERIENCE = [
   {
     debut: "Jan 2026",
+    fin: "Présent",
+    poste: "Développeur Full Stack",
+    etablissement: "Yeiayel Consulting",
+    en: { debut: "Jan 2026", fin: "Present", poste: "Full Stack Developer" },
+  },
+  {
+    debut: "Jan 2026",
     fin: "Jan 2026",
     poste: "Formateur Data Analytics",
     etablissement: "ACEP Madagascar",

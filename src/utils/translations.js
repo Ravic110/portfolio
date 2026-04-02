@@ -13,7 +13,9 @@ export const translations = {
       portfolioBtn: "Mon Portfolio",
     },
     personalInfo: {
+      bio: "Ingénieur Informatique & Data",
       phone: "Téléphone",
+      email: "Email",
       address: "Adresse",
       downloadCV: "Télécharger mon CV",
     },
@@ -57,7 +59,9 @@ export const translations = {
       portfolioBtn: "My Portfolio",
     },
     personalInfo: {
+      bio: "Software Engineer & Data Scientist",
       phone: "Phone",
+      email: "Email",
       address: "Address",
       downloadCV: "Download my CV",
     },

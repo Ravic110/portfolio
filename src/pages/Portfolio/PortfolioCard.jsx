@@ -5,8 +5,7 @@ const PortfolioCard = ({ element, modalId }) => (
     <div className="isotop-item mockup logo w-100">
       <div className="fillter-item bg-prink">
         <button
-          className="img"
-          style={{ background: "none", border: "none", padding: 0, cursor: "pointer", display: "block", width: "100%" }}
+          className="img portfolio-btn portfolio-btn--block"
           data-bs-toggle="modal"
           data-bs-target={`#${modalId}`}
           aria-label={`Voir ${element.nom}`}
@@ -15,9 +14,10 @@ const PortfolioCard = ({ element, modalId }) => (
         </button>
         <h6 className="item-title">
           <button
-            style={{ background: "none", border: "none", padding: 0, cursor: "pointer" }}
+            className="portfolio-btn"
             data-bs-toggle="modal"
             data-bs-target={`#${modalId}`}
+            aria-label={`Voir les détails du projet : ${element.nom}`}
           >
             {element.nom}
           </button>

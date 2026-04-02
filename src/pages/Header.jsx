@@ -8,7 +8,8 @@ const Header = () => {
   const t = translations[lang].nav;
 
   const activeClass = () => {
-    let element = document.querySelector(".mobile-menu");
+    const element = document.querySelector(".mobile-menu");
+    if (!element) return;
     if (element.classList.contains("active")) {
       element.classList.remove("active");
     } else {

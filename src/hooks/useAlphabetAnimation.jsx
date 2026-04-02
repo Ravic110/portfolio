@@ -7,32 +7,29 @@ const useAlphabetAnimation = (elements, duration) => {
     const intervalIds = {};
 
     const animateElement = (element) => {
+      if (!element.dataset.value) return;
       let iteration = 0;
       const intervalId = setInterval(() => {
-        element.innerText = element.innerText
+        element.innerText = element.dataset.value
           .split("")
           .map((letter, index) => {
-            if(index < iteration) {
+            if (index < iteration) {
               return element.dataset.value[index];
             }
-
             return letters[Math.floor(Math.random() * 26)];
           })
           .join("");
 
-        if(iteration >= element.dataset.value.length) {
-          clearInterval(intervalId);
-        }
-
         iteration += 1 / 3;
+
+        if (iteration >= element.dataset.value.length) {
+          element.innerText = element.dataset.value;
+          clearInterval(intervalId);
+          delete intervalIds[element.dataset.id];
+        }
       }, 30);
 
       intervalIds[element.dataset.id] = intervalId;
-
-      setTimeout(() => {
-        clearInterval(intervalId);
-        delete intervalIds[element.dataset.id];
-      }, duration);
     };
 
     elements.forEach(element => {

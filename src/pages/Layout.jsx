@@ -10,8 +10,6 @@ const Layout = () => {
     <>
       <div
         className="page-wrapper home-3"
-        style={{ backgroundImage: "url('/assets/img/bg/page-bg-1.webp')" }}
-        // data-background="/assets/img/bg/page-bg-1.jpg"
       >
         <LoadingPage/>
         <Header />

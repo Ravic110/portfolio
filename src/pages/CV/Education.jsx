@@ -1,5 +1,6 @@
 import { EDUCATION } from "@data/education";
 import useTranslations from "@hooks/useTranslations";
+import { localize } from "@utils/i18n";
 import { useLanguage } from "@contexts/LanguageContext";
 
 const Education = () => {
@@ -18,21 +19,19 @@ const Education = () => {
         </div>
         <div className="bostami-card-wrap">
           {EDUCATION.map((element) => {
-            const parcours = lang === "en" && element.parcours_en
-              ? element.parcours_en
-              : element.parcours;
+            const item = localize(element, lang);
             return (
               <div
                 className="bostami-card-item bg-prink mb-20"
                 key={`${element.parcours}-${element.anneeDebut}-${element.anneeFin}`}
               >
                 <span className="card-subtitle">
-                  {element.anneeDebut}-{element.anneeFin}
+                  {item.anneeDebut}-{item.anneeFin}
                 </span>
                 <h6 className="card-title">
-                  {parcours} <span>- {element.etablissement},</span>
+                  {item.parcours} <span>- {item.etablissement},</span>
                 </h6>
-                <p className="card-text">{element.lieu}</p>
+                <p className="card-text">{item.lieu}</p>
               </div>
             );
           })}

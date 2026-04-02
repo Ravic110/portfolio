@@ -6,27 +6,27 @@ import Portfolio from "@pages/Portfolio/Portfolio";
 export const MAIN_ROUTES = {
   path: "/",
   element: <Layout/>,
-  errorElement: <></>,
+  errorElement: <div style={{ padding: "2rem", textAlign: "center" }}>Une erreur s&apos;est produite. Veuillez actualiser la page.</div>,
   children: [
     {
       index: true,
       element: <About/>,
-      errorElement: <></>
+      errorElement: <div style={{ padding: "2rem", textAlign: "center" }}>Une erreur s&apos;est produite. Veuillez actualiser la page.</div>
     },
     {
       path: "about",
       element: <About/>,
-      errorElement: <></>
+      errorElement: <div style={{ padding: "2rem", textAlign: "center" }}>Une erreur s&apos;est produite. Veuillez actualiser la page.</div>
     },
     {
       path: "resume",
       element: <CV/>,
-      errorElement: <></>
+      errorElement: <div style={{ padding: "2rem", textAlign: "center" }}>Une erreur s&apos;est produite. Veuillez actualiser la page.</div>
     },
     {
       path: "portfolio",
       element: <Portfolio/>,
-      errorElement: <></>
+      errorElement: <div style={{ padding: "2rem", textAlign: "center" }}>Une erreur s&apos;est produite. Veuillez actualiser la page.</div>
     },
   ],
 };

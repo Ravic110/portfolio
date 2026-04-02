@@ -18,11 +18,11 @@ const Portfolio = () => {
           <div className="row">
             <div className="col-12">
               <div className="row d-flex">
-                {PORTFOLIO.map((element, index) => (
+                {PORTFOLIO.map((element) => (
                   <PortfolioCard
-                    key={`${element.nom}-${index}`}
+                    key={element.id}
                     element={element}
-                    modalId={`portfolio-${index}`}
+                    modalId={`portfolio-${element.id}`}
                   />
                 ))}
               </div>
@@ -31,11 +31,11 @@ const Portfolio = () => {
         </div>
       </div>
 
-      {PORTFOLIO.map((element, index) => (
+      {PORTFOLIO.map((element) => (
         <PortfolioModal
-          key={`${element.nom}-${index}-modal`}
+          key={`${element.id}-modal`}
           element={element}
-          modalId={`portfolio-${index}`}
+          modalId={`portfolio-${element.id}`}
         />
       ))}
     </>

@@ -13,13 +13,14 @@ export const LEADERSHIP = [
     },
   },
   {
-    debut: "2025",
-    fin: "Présent",
+    debut: "Nov. 2023",
+    fin: "Nov. 2024",
     poste: "Président exécutif",
     etablissement: "Association pour la Promotion de l'entrepreneuriat de l'ESPA (APEESPA)",
     details: "Établissement de partenariats pour financer les projets, supervision des opérations et des équipes.",
     en: {
-      fin: "Present",
+      debut: "Nov. 2023",
+      fin: "Nov. 2024",
       poste: "Executive President",
       details: "Building partnerships to fund projects, overseeing operations and teams.",
     },

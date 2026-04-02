@@ -1,4 +1,5 @@
 const baeloo = {
+  id: "baeloo",
   nom: "Baeloo",
   description:
     "Il s'agit d'un site de référencement de plusieurs services (Hébergements, Restaurations, etc...). Les utilisateurs (client) pourront demander un devis pour mettre en avant leurs services et prestations. Ils doivent alors fournir à l'administrateur les informations et les images nécéssaires. Ils peuvent également demander un devis pour favoriser leurs services et prestations sur la page d'acceuil.",
